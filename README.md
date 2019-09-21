@@ -1,6 +1,7 @@
 # Function ents.FindInBoxRotated
 
 	This finds the entity in the rotated box.
+	Created for Gmod
 
 # Arguments
 
