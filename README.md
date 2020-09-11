@@ -7,10 +7,9 @@
 
 	Vector - Box center,
 	Angle - Box rotate,
-	Int - X,
-	Int - Y,
-	Int - Z,
-	Int - Dist for Sphere - It should have a multiplier of 1.5 from the largest value.
+	Vector - Box min,
+	Vector - Box max,
+	Int - Dist for Sphere - It should have a multiplier of math.Sqrt(2) or `1.4(1421356237)`~ from the largest value.
 
 # Result
 
