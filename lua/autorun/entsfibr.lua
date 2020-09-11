@@ -1,10 +1,16 @@
-function ents.FindInBoxRotated(pos,ang,x,y,z,dist)
-  local tbl={}
-  for _,v in ipairs(ents.FindInSphere(pos,dist))do
-    local vec=WorldToLocal(v:GetPos(),v:GetAngles(),pos,ang)
-    if(vec.x<=x&&vec.x<=-x)&&(vec.y<=y&&vec.y<=-y)&&(vec.z<=z&&vec.z<=-z)then
-      table.insert(tbl,v)
-    end
-  end
-  return tbl
+local ipairs = ipairs
+local WorldToLocal = WorldToLocal
+local table_insert = table.insert
+local ents_FindInSphere = ents.FindInSphere
+
+function ents.FindInBoxRotated(vCenter, aRotation, vMinBox, vMaxBox, flDist)
+	local tResult = {}
+
+	for _, eTarget in ipairs(ents_FindInSphere(vCenter, flDist))do
+		if WorldToLocal(eTarget:GetPos(), eTarget:GetAngles(), vCenter, aRotation):WithinAABox(vMinBox, vMaxBox) then
+			table_insert(tResult, eTarget)
+		end
+	end
+
+  	return tResult
 end
