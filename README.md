@@ -1,7 +1,8 @@
 # Function ents.FindInBoxRotated
 
 	This finds the entity in the rotated box.
-	Created for Gmod
+	Like ents.FindInBox but rotated =)
+	Created for Garry's mod (GMod) in Lua (GLua)
 
 # Arguments
 
@@ -9,7 +10,6 @@
 	Angle - Box rotate,
 	Vector - Box min,
 	Vector - Box max,
-	Int - Dist for Sphere - It should have a multiplier of math.Sqrt(2) or `1.4(1421356237)`~ from the largest value.
 
 # Result
 
